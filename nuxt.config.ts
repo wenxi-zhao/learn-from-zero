@@ -1,65 +1,37 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindTypography from '@tailwindcss/typography'
-import remarkMath from 'remark-math'
-import rehypeKatex from 'rehype-katex'
 
 export default defineNuxtConfig({
-  app: {
-    baseURL: '/learn-from-zero/',
-    buildAssetsDir: 'assets',
-  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: [
-    '@nuxt/content', 
-    '@nuxtjs/tailwindcss', 
-    '@nuxtjs/color-mode', 
-    '@pinia/nuxt'
-  ],
-  build: {
-    transpile: ['mermaid']
-  },
-  css: [
-    'katex/dist/katex.min.css'
+    '@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@pinia/nuxt'
   ],
   content: {
     markdown: {
       toc: { depth: 2, searchDepth: 2 },
-      remarkPlugins: {
-        'remark-math': {
-          singleDollar: true
-        }
-      },
-      rehypePlugins: {
-        'rehype-katex': {}
-      }
     },
     highlight: {
       langs: ['py', 'js'],
+      // OR
       theme: {
-        default: 'github-dark',
-        dark: 'github-dark',
+        // Default theme (same as single string)
         light: 'github-light',
+        // Theme used if `html.dark`
+        dark: 'github-dark',
+        // Theme used if `html.sepia`
       }
-    },
+    }
   },
   colorMode: {
-    preference: 'system',
-    fallback: 'light',
+    preference: 'system', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
     hid: 'nuxt-color-mode-script',
     globalName: '__NUXT_COLOR_MODE__',
     componentName: 'ColorScheme',
     classPrefix: '',
     classSuffix: '',
-    storage: 'localStorage',
+    storage: 'localStorage', // or 'sessionStorage' or 'cookie'
     storageKey: 'nuxt-color-mode'
   },
-  nitro: {
-    prerender: {
-      routes: ['/user/1', '/user/2'],
-      ignore: ['/dynamic'],
-      crawlLinks: true
-    }
-  },
-  ssr: false
 })
