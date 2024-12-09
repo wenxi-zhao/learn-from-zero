@@ -5,18 +5,8 @@
         <p> Learning Website </p>
         <ul class="ml-6 gap-x-8 hidden lg:flex">
           <li class="relative">
-            <a class="text-sm/6 font-semibold flex items-center gap-1" href="/">
+            <a class="text-sm/6 font-semibold flex items-center gap-1" href="/python-zero/preface">
               Home
-            </a>
-          </li>
-          <li class="relative">
-            <a class="text-sm/6 font-semibold flex items-center gap-1" href="/python-zero">
-              Python For Beginners
-            </a>
-          </li>
-          <li class="relative">
-            <a class="text-sm/6 font-semibold flex items-center gap-1" href="/mysql-zero">
-              MySQL For Beginners
             </a>
           </li>
         </ul>
@@ -24,9 +14,6 @@
       <div class="flex items-center justify-end lg:flex-1 gap-1.5">
         <button type="button" @click="toggleColorMode" class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center">
           Light/Dark
-        </button>
-        <button type="button" class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center">
-          Login
         </button>
         <button type="button" class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 p-1.5 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center lg:hidden">
           Expand
