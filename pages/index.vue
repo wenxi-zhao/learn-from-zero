@@ -1,3 +1,11 @@
 <template>
-  <h1>这里是首页</h1>
+  <div></div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    this.$router.replace('/python-zero/preface');
+  }
+}
+</script>
