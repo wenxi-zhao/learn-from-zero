@@ -3,31 +3,51 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 监听main分支的push事件
+      - main  # 监听 main 分支的 push 事件
+  schedule:
+    - cron: '0 3 */3 * *'  # 每三天凌晨 3:00 触发定时任务
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # 运行在最新的Ubuntu虚拟机上
+    runs-on: ubuntu-latest  # 运行在最新的 Ubuntu 虚拟机上
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4  # 检出代码
+      - name: Checkout
+        uses: actions/checkout@v4  # 检出代码
 
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22.10.0'  # 使用Node.js版本
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.10.0'  # 使用 Node.js 版本
 
-    - name: Install dependencies
-      run: npm install  # 安装依赖
+      - name: Install dependencies
+        run: npm install  # 安装依赖
 
-    - name: Build with Nuxt.js
-      env:
-        NUXT_APP_BASE_URL: '/learn-from-zero/'
-      run: npm run generate  # 使用Nuxt.js生成静态网站
+      - name: Build with Nuxt.js
+        env:
+          NUXT_APP_BASE_URL: '/learn-from-zero/'
+        run: npm run generate  # 使用 Nuxt.js 生成静态网站
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+  auto-deploy:
+    runs-on: ubuntu-latest  # 运行在最新的 Ubuntu 虚拟机上
+    if: github.event_name == 'schedule'  # 仅在定时任务触发时运行
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4  # 检出代码
+
+      - name: Create empty commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git commit --allow-empty -m "Auto deploy every 3 days at 3 AM"
+
+      - name: Push to main branch
+        run: |
+          git push origin main
