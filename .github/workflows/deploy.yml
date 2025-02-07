@@ -25,7 +25,7 @@ jobs:
 
       - name: Build with Nuxt.js
         env:
-          NUXT_APP_BASE_URL: '/learn-from-zero/python-zero/preface'
+          NUXT_APP_BASE_URL: '/learn-from-zero/'
         run: npm run generate  # 使用 Nuxt.js 生成静态网站
 
       - name: Deploy to GitHub Pages
