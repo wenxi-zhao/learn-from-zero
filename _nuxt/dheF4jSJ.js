@@ -1,0 +1,1 @@
+import{_ as r,o,c as s,A as a}from"./Be6E-jx4.js";const c={},t={class:"px-2 border bg-white dark:bg-black dark:border-gray-700 rounded"};function d(e,n){return o(),s("div",t,[a(e.$slots,"default",{class:"dark:"})])}const _=r(c,[["render",d]]);export{_ as default};
