@@ -36,11 +36,11 @@
               Video Link
             </span>
           </a>
-          <a class="flex items-center gap-1.5" href="/" >
+          <!-- <a class="flex items-center gap-1.5" href="/" >
             <span class="text-sm/6 font-medium relative">
               Advertisement Space
             </span>
-          </a>
+          </a> -->
         </div>
       </div>
       </div>

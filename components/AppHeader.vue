@@ -5,7 +5,7 @@
         <p> Learning Website </p>
         <ul class="ml-6 gap-x-8 hidden lg:flex">
           <li class="relative">
-            <a class="text-sm/6 font-semibold flex items-center gap-1" href="/python-zero/preface">
+            <a class="text-sm/6 font-semibold flex items-center gap-1" href="/learn-from-zero/python-zero/preface">
               Home
             </a>
           </li>
