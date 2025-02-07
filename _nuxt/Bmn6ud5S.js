@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t}from"./7OvbDS87.js";const r={mounted(){this.$router.replace("/python-zero/preface")}};function c(n,s,a,p,_,d){return t(),o("div")}const i=e(r,[["render",c]]);export{i as default};
